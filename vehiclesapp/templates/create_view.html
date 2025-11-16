@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Registrar vehículo</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button class="btn btn-primary" type="submit">
+        Guardar
+    </button>
+
+    <a href="/" class="btn btn-secondary">
+        Cancelar
+    </a>
+</form>
+
+{% endblock %}

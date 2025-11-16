@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Vehículos</h2>
+
+<a href="/create/" class="btn btn-primary mb-3">
+    <i class="bi bi-plus-circle"></i> Agregar vehículo
+</a>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Placa</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Color</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for data in dataset %}
+        <tr>
+            <td>{{ data.placa }}</td>
+            <td>{{ data.marca }}</td>
+            <td>{{ data.modelo }}</td>
+            <td>{{ data.get_color_vehiculo_display }}</td>
+
+            <td>
+                <!-- Botón Editar -->
+                <a href="/update/{{ data.id }}" class="btn btn-warning btn-sm">
+                    <i class="bi bi-pencil"></i>
+                </a>
+
+                <!-- Botón Eliminar -->
+                <button class="btn btn-danger btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal{{ data.id }}">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+        </tr>
+
+        <!-- Modal de eliminación -->
+        <div class="modal fade" id="deleteModal{{ data.id }}" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <form action="/delete/{{ data.id }}" method="post">
+                        {% csrf_token %}
+
+                        <div class="modal-header">
+                            <h5 class="modal-title">Eliminar registro</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            ¿Desea eliminar el vehículo con ID: <strong>{{ data.id }}</strong>?
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn btn-danger">
+                                Eliminar
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}
