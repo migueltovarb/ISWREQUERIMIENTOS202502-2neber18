@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Style Tile{% endblock %}
+
+{% block content %}
+
+<h1 class="fw-bold mb-4">🎨 Style Tile — Sistema de Reservas de Salas Académicas</h1>
+
+<!-- PALETA DE COLORES -->
+<h3 class="fw-bold mt-4">🎨 Paleta de Colores</h3>
+
+<div class="row mt-3 mb-5">
+
+    <div class="col-md-3 mb-3">
+        <div style="width:100%; height:80px; background:#1E88E5; border-radius:10px;"></div>
+        <p class="mt-2">Azul Institucional<br><code>#1E88E5</code></p>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div style="width:100%; height:80px; background:#FFB300; border-radius:10px;"></div>
+        <p class="mt-2">Naranja de Acento<br><code>#FFB300</code></p>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div style="width:100%; height:80px; background:#F5F5F5; border-radius:10px;"></div>
+        <p class="mt-2 text-dark">Gris Claro<br><code>#F5F5F5</code></p>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div style="width:100%; height:80px; background:#212121; border-radius:10px;"></div>
+        <p class="mt-2">Gris Oscuro (Fondo)<br><code>#212121</code></p>
+    </div>
+
+</div>
+
+<!-- TIPOGRAFÍA -->
+<h3 class="fw-bold mt-4">✍️ Tipografía</h3>
+
+<div class="bg-light text-dark p-4 mb-5" style="border-radius:14px;">
+    <p style="font-size:32px; font-weight:700;">Roboto — Bold (Títulos)</p>
+    <p style="font-size:20px; font-weight:400;">Roboto — Regular (Contenido general)</p>
+</div>
+
+<!-- BOTONES -->
+<h3 class="fw-bold mt-4">🔘 Botones</h3>
+
+<div class="row mb-5">
+
+    <div class="col-md-6 mb-3">
+        <button class="btn text-white w-100 p-3" style="background:#1E88E5;">Botón Primario</button>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <button class="btn w-100 p-3" style="border:2px solid #1E88E5; color:#1E88E5;">Botón Secundario</button>
+    </div>
+
+</div>
+
+<!-- ICONOGRAFÍA -->
+<h3 class="fw-bold mt-4">🧩 Iconografía (Material Icons Outlined)</h3>
+
+<div class="p-4 bg-light text-dark mb-5" style="border-radius:14px;">
+    <span class="material-icons-outlined" style="font-size:40px; color:#1E88E5;">meeting_room</span>
+    <span class="material-icons-outlined" style="font-size:40px; color:#FFB300;">event_available</span>
+    <span class="material-icons-outlined" style="font-size:40px; color:#1E88E5;">manage_accounts</span>
+    <span class="material-icons-outlined" style="font-size:40px; color:#000;">calendar_month</span>
+</div>
+
+<!-- CARDS Y COMPONENTES -->
+<h3 class="fw-bold mt-4">📦 Cards y Componentes</h3>
+
+<div class="row">
+
+    <div class="col-md-6 mb-4">
+        <div class="card shadow-lg border-0" style="border-radius:14px;">
+            <div class="card-body text-dark">
+                <h5 class="fw-bold">Card Ejemplo</h5>
+                <p>Este es un componente tipo card con fondo gris claro y sombra suave.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <input type="text" class="form-control" placeholder="Campo de formulario (input)">
+    </div>
+
+</div>
+
+{% endblock %}
